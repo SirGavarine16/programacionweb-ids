@@ -1,11 +1,16 @@
 //Script con funcion para detectar palindromo
-
 function isPalindromo(string){
   let reversedString = '';
-  for(var i=string.length; i<=0; i--){
+  for(var i=string.length-1; i>=0; i--){
     reversedString += string[i];
   }
-  return reversedString;
+  if(string.toLowerCase() === reversedString.toLowerCase() ){
+    return true;
+  } else {
+    return false;
+  } 
 }
-
-alert(isPalindromo('Hello world'));
+let frase = window.prompt('Ingrese una frase:');
+isPalindromo(frase) ? 
+  alert('Es palindromo') : 
+  alert('No es palindromo');
