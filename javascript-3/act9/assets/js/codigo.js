@@ -3,10 +3,12 @@ function isPair(number){
   if(isNaN(number)){
     alert('El número especificado no es válido.')
   } else {
-    parseInt(number) % 2 === 0 ?
-      alert('Es par.') :
-      alert('Es impar.')
+    if( parseInt(number) % 2 === 0 ){
+      return 'Es par.' 
+    } else {
+      return 'Es impar.'
+    }
   }
 }
 let n = window.prompt('Ingrese una número:');
-isPair(n)
+alert(isPair(n))
