@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 14 - DOM b�sico y atributos XHTML</title>
+        <style type="text/css">
+            .display-none {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            var auxUno = true;
+            var auxDos = true;
+            var auxTres = true;
+
+            function ocultarUno (np) {
+                let strContenido = 'contenidos_'+np;
+                let strEnlace = 'enlace_'+np;
+                document.getElementById(strContenido).classList.add('display-none');
+                document.getElementById(strEnlace).innerHTML = 'Mostrar contenidos'; 
+                switch(np){
+                    case 1: auxUno = !auxUno; break;
+                    case 2: auxDos = !auxDos; break;
+                    case 3: auxTres = !auxTres; break;
+                }
+            }
+            function mostrarUno (np) {
+                let strContenido = 'contenidos_'+np;
+                let strEnlace = 'enlace_'+np;
+                document.getElementById(strContenido).classList.remove('display-none');
+                document.getElementById(strEnlace).innerHTML = 'Ocultar contenidos'; 
+                switch(np){
+                    case 1: auxUno = !auxUno; break;
+                    case 2: auxDos = !auxDos; break;
+                    case 3: auxTres = !auxTres; break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p id="contenidos_1">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
+            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
+            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
+        </p>
+        <a id="enlace_1" href="#" onclick="auxUno ? ocultarUno():mostrarUno()">Ocultar contenidos</a>
+        <br />
+        <p id="contenidos_2">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
+            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
+            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
+        </p>
+        <a id="enlace_2" href="#" onclick="auxDos ? ocultarUno():mostrarUno()">Ocultar contenidos</a>
+        <br />
+        <p id="contenidos_3">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
+            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
+            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
+        </p>
+        <a id="enlace_3" href="#" onclick="auxTres ? ocultarUno():mostrarUno()">Ocultar contenidos</a>
+    </body>
+</html>
