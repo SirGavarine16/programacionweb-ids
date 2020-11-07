@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 15</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+    
+    .div-master {
+        width: 100%;
+        height: 100%;
+    }
+    .div-info {
+        padding: 1rem;
+        width: 150px;
+        border: 2px #c2c2c2 solid;
+        margin-bottom: 50px;
+    }
+</style>
+<body onmousemove="handler(event)" onclick="handler(event)" onkeydown="handler(event)">
+    <noscript>
+        You need to enable scripts.
+    </noscript>
+    <div class="div-master" >  
+        <div class="div-info" id='mouse-div'>
+            <h2>Mouse</h2>
+            <span></span>
+            <p>Navigator [<span id='nav_x'></span>,<span id='nav_y'></span>]</p>
+            <p>Page [<span id='screen_x'></span>,<span id='screen_y'></span>]</p>
+        </div>
+        <div class="div-info" id='keyboard-div'>
+            <h2>Keyboard</h2>
+            <span></span>
+            <p>Char [<span id='char'></span>]</p>
+            <p>Code [<span id='code'></span>]</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function handler (e) {
+        console.log(e);
+        if(e.type == 'mousemove'){
+            document.getElementById('nav_x').innerHTML = e.screenX;
+            document.getElementById('nav_y').innerHTML = e.screenY;
+            document.getElementById('screen_x').innerHTML = e.clientX;
+            document.getElementById('screen_y').innerHTML = e.clientY;
+            document.getElementById('mouse-div').style.backgroundColor = 'white';
+            document.getElementById('keyboard-div').style.backgroundColor = 'white';
+        }
+        if(e.type == 'click'){
+            document.getElementById('mouse-div').style.backgroundColor = '#FFFFCC'
+        }
+        if(e.type == 'keydown'){
+            document.getElementById('char').innerHTML = e.key;
+            document.getElementById('code').innerHTML = e.keyCode;
+            document.getElementById('keyboard-div').style.backgroundColor = '#CCE6FF';
+        }
+        
+    }
+</script>
+</html>
