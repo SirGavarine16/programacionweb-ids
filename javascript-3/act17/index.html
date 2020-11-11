@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 17</title>
+</head>
+
+<body>
+    <form name='my_form'>
+        <label for="mssg" style="display: block;">Mensaje</label>
+        <textarea name="mssg" maxlength="100" id="mssg" cols="30" rows="5" placeholder="Escribe algo..."
+            onkeyup="handlerUp(event)" onkeydown="return handler(event)"></textarea>
+        <label><span id="charCounter">0</span>/100</label>
+    </form>
+    <script type="text/javascript">
+        function handler(e) {
+            if (document.getElementById('mssg').value.length <= 100) {
+                document.getElementById('charCounter').innerHTML = document.getElementById('mssg').value.length;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function handlerUp(e) {
+            document.getElementById('charCounter').innerHTML = document.getElementById('mssg').value.length;
+        }
+    </script>
+</body>
+
+</html>
